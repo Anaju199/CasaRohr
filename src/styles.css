@@ -166,6 +166,14 @@ h6 {
 }
 
 
+.mural {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1rem 0 2rem;
+}
+
+
 .container_cadastros {
   padding-right: 1rem;
   padding-left: 1rem;

@@ -41,3 +41,11 @@ export interface Pedido {
 //   data_pgt: string;
 // }
 
+
+export interface Foto {
+  id: number;
+  categoria: string;
+  foto: string;
+  descricao: string;
+}
+

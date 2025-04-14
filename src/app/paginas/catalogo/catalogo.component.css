@@ -1,0 +1,5 @@
+.container-iframe {
+  width: 100%;
+  max-width: 100vw; /* Garante que não ultrapasse a tela */
+  overflow: hidden;
+}

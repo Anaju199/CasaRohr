@@ -20,10 +20,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
-      login: ['',Validators.compose([ //15035113671
+      login: ['15035113671',Validators.compose([ //15035113671
         Validators.required
       ])],
-      senha: ['',Validators.compose([ //ana123
+      senha: ['ana123',Validators.compose([ //ana123
         Validators.required
       ])]
     })
@@ -38,11 +38,16 @@ export class LoginComponent implements OnInit {
       this.authService.autenticar(login, senha).subscribe({
         next: (value) => {
           alert('Login realizado com sucesso')
-          this.router.navigateByUrl('/paginaInicial')
+          this.router.navigateByUrl('/administrador')
           this.formulario.reset();
         },
         error: (err) => {
-          alert('Login ou senha incorretos')
+          console.log(err)
+          if (err.status = 403) {
+            alert('Erro interno.')
+          } else {
+            alert('Login ou senha incorretos')
+          }
         },
       })
     }

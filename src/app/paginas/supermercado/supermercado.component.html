@@ -11,7 +11,7 @@
         </a>
     </div>
 </div>
-<div class="container row mx-auto">
+<!-- <div class="container row mx-auto">
   <div class="col-md-6 align-self-center">
     <h3 class="centralizar-texto">FIQUE POR DENTRO DE NOSSAS OFERTAS​ <br/>
         <img src="../../../assets/imagens/temp/supermercado_01.jpeg" class="img" alt="" style="width: 95%;">
@@ -25,6 +25,9 @@
         <br/>
     </h3>
   </div>
+</div> -->
+<div>
+  <app-card-carrosel [lista]="listaSupermercado"></app-card-carrosel>
 </div>
 <div class="centralizar-texto">
   <button type="button" class="btn btn-success mb-1 text-center w-100"
@@ -37,17 +40,21 @@
     <div class="text-center">
       <h5 class="texto">Supermercado Casa Rohr - Loja 1</h5>
       <br/>
-      <button type="button" class="btn btn-secondary" style="width: 218px;">Como chegar
-        <img src="../../../assets/imagens/maps.png" class="img" style="height: 20px;">
-      </button>
+      <a href="https://maps.app.goo.gl/yymnVN3zRUzQ3B2y7" class="btn btn-secondary d-flex align-items-center justify-content-center" 
+        style="width: 218px;" target="_blank">
+        Como chegar
+        <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
+      </a>
     </div>
     |
     <div class="text-center">
       <h5 class="texto">Supermercado Cas Rohr - Loja 2</h5>
       <br/>
-      <button type="button" class="btn btn-secondary" style="width: 218px;">Como chegar
-        <img src="../../../assets/imagens/maps.png" class="img" style="height: 20px;">
-      </button>
+      <a href="https://maps.app.goo.gl/Ati4sMA4RN9XYqzC6" class="btn btn-secondary d-flex align-items-center justify-content-center" 
+        style="width: 218px;" target="_blank">
+        Como chegar
+        <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
+      </a>
     </div>
   </div>
 </div>

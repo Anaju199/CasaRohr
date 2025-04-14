@@ -1,0 +1,42 @@
+<section class="container_cadastros fomulario ff-inter">
+    <header class="header">
+      <h2>{{ titulo }}</h2>
+    </header>
+    <form [formGroup]="formulario">
+
+      <label for="descricao">Descrição</label>
+      <input
+        type="textarea"
+        class="input"
+        id="descricao"
+        formControlName="descricao"
+        placeholder="Digite o descricao"
+      >
+      <div class="mensagem__erro"
+       *ngIf="formulario.get('descricao')?.errors && formulario.get('descricao')?.touched">
+        Descrição é Obrigatória!
+      </div>
+
+      <label for="arquivo">Arquivo</label>
+      <input #fileInput
+       type="file"
+       class="form-control inputFile"
+       id="arquivo"
+       accept="application/pdf"
+       (change)="processarArquivo($event.target)"
+       >
+
+      <div class="d-flex flex-column align-items-center">
+        <div class="d-flex flex-wrap gap-3">
+        <button
+        [disabled]="!formulario.valid"
+         (click)="id ? editar() : criar()"
+          [ngClass]="habilitarBotao()"
+          id="btnSalvar"
+          >Salvar
+        </button>
+        <button (click)="cancelar()" class="botao">Cancelar</button>
+        </div>
+      </div>
+    </form>
+  </section>

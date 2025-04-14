@@ -8,8 +8,9 @@ import {
 } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { TokenService } from '../../services/token.service';
-import { CSRFTokenService } from '../../services/csrftoken.service';
+import { TokenService } from '../services/token.service';
+import { CSRFTokenService } from '../services/csrftoken.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class AutenticacaoInterceptor implements HttpInterceptor {
@@ -18,9 +19,16 @@ export class AutenticacaoInterceptor implements HttpInterceptor {
     private tokenService: TokenService,
     private csfrTokenService: CSRFTokenService) {}
 
+  private login: string = environment.login;
+
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const isApiRequest = request.url.includes('/api/');
-    const isLoginRequest = request.url.includes('/login/');
+    const isLoginRequest = request.url.includes(`${this.login}/`);
+
+    
+    // const hasToken = this.tokenService.possuiToken();
+    // console.log('Token exists:', hasToken);
+    
 
     if (isLoginRequest && this.tokenService.possuiToken()) {
       const token = this.tokenService.retornarToken();

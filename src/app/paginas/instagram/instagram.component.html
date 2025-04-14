@@ -1,0 +1,15 @@
+<div *ngIf="profileData.username">
+    <h3>Perfil de {{ profileData.username }}</h3>
+    <p>Postagens: {{ profileData.media_count }}</p>
+  </div>
+  
+  <div *ngFor="let post of posts">
+    <div *ngIf="post.media_type === 'IMAGE'">
+      <img [src]="post.media_url" alt="Instagram Post" />
+    </div>
+    <div *ngIf="post.media_type === 'VIDEO'">
+      <video [src]="post.media_url" controls></video>
+    </div>
+    <p>{{ post.caption }}</p>
+  </div>
+  

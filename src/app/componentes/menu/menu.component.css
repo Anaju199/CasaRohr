@@ -1,13 +1,71 @@
 .nav-item {
   margin: 0 20px;
+  color: #00006A;
 }
 
 .nav-link {
-  /* color: white; */
-  text-decoration: black;
+  color: #00006A;
+}
+
+.nav-link:hover {
+  color: #0000a0;
 }
 
 .navbar {
   background: transparent;
   /* background-image: url("../../../assets/imagens/fundo-rodape.png"); */
+}
+
+.container {
+  border-bottom: 2px solid #00006A; /* Altere a cor e a espessura conforme necessário */
+}
+
+.social-icons {
+  margin-left: 20px;
+}
+
+.social-icons .nav-link {
+  color: #00006A;
+  font-size: 1.2rem;
+}
+
+.social-icons .nav-link:hover {
+  color: #0000a0;
+}
+
+.fa-magnifying-glass {
+  color: #00006A;
+}
+
+.search-box {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  width: 250px;
+}
+
+.search-box.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.search-box input {
+  border: 1px solid #00006A;
+  color: #00006A;
+}
+
+.search-box input:focus {
+  border-color: #0000a0;
+  box-shadow: 0 0 0 0.2rem rgba(0,0,106,0.25);
+  outline: none;
 }

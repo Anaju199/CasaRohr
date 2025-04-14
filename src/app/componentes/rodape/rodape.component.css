@@ -1,46 +1,115 @@
-footer {
-  background-image: url(/assets/imagens/fundo-rodape-branco.png);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "TextoCopyright LogoRodape .";
+.footer {
+  background: #00006A;
+  color: white;
+  padding: 2rem;
+  width: 100%;
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  margin-top: 2rem;
+}
+
+.footer-container {
+  display: flex;
   align-items: center;
-  padding: 1rem 2rem;
-  bottom:0;
-  width:100%;
-  position: fixed;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.TextoCopyright {
-  justify-self: center;
-  grid-area: TextoCopyright;
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
 }
 
-.LogoRodape {
-  justify-self: center;
-  grid-area: LogoRodape;
+.footer-item a {
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s ease;
 }
 
-footer small {
-  color: rgb(12, 12, 12);
+.footer-item a:hover {
+  opacity: 0.8;
 }
 
-@media (max-width: 576px) {
-  .cabecalho .logo {
-    padding: 2rem;
-  }
-
-  .cabecalho p {
-    font-size: 1.5rem
-  }
+.footer-logo {
+  width: 100px;
 }
 
+.footer-divider {
+  width: 2px;
+  height: 40px;
+  background: white;
+  margin: 0 1rem;
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  width: 100%;
+}
+
+.footer-copyright a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-copyright a:hover {
+  opacity: 0.8;
+}
+
+i {
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.footer-social a {
+  margin: 0 0.5rem;
+}
+
+.footer-social i {
+  font-size: 1.5rem;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-  footer {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 1rem;
+  .footer {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-divider {
+    display: none; /* Remove a barra vertical em telas pequenas */
+  }
+
+  .footer-item {
+    flex-direction: column;
+    margin: 0.5rem 0;
+  }
+
+  .footer-social {
+    margin-top: 1rem;
+  }
+
+  .footer-copyright {
+    margin-top: 1rem;
   }
 }

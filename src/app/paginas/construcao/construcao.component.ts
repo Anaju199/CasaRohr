@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FotosService } from 'src/app/core/services/fotos.service';
+import { Foto } from 'src/app/core/tipos';
 
 @Component({
   selector: 'app-construcao',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConstrucaoComponent implements OnInit {
 
-  constructor() { }
+  listaConstrucao: Foto[] = [];
+
+  constructor(
+    private service: FotosService
+  ) { }
 
   ngOnInit(): void {
+    this.service.listar('construcao').subscribe((listaConstrucao) => {
+      this.listaConstrucao = listaConstrucao
+    })
   }
 
 }

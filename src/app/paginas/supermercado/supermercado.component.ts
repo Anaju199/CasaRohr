@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FotosService } from 'src/app/core/services/fotos.service';
+import { Foto } from 'src/app/core/tipos';
 
 @Component({
   selector: 'app-supermercado',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupermercadoComponent implements OnInit {
 
-  constructor() { }
+  listaSupermercado: Foto[] = [];
+
+  constructor(
+    private service: FotosService
+  ) { }
 
   ngOnInit(): void {
+    this.service.listar('supermercado').subscribe((listaSupermercado) => {
+      this.listaSupermercado = listaSupermercado
+    })
   }
 
 }

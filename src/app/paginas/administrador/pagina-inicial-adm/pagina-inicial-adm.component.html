@@ -1,0 +1,29 @@
+<div class="container_cadastros row mx-auto">
+    <div class="container row mx-auto">
+      <div class="align-self-center">
+        <p class="titulo">
+          Página do Administrador
+        </p>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td><i class="fa-regular fa-pen-to-square"></i><a href="/listarFotos" class="add"> Fotos</a></td>
+          <td><i class="fa-regular fa-plus"></i><a href="/cadastrarEditarFoto" class="add"> Adicionar Foto</a></td>
+        </tr>
+        <tr>
+          <td><i class="fa-regular fa-pen-to-square"></i><a href="/listarCatalogos" class="add"> Catálogos</a></td>
+          <td><i class="fa-regular fa-plus"></i><a href="/cadastrarEditarCatalogo" class="add"> Adicionar Catálogo</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+    <div class="d-flex justify-content-center align-items-center">
+      <h6 class="nav-item ff-inter me-2">Olá, {{nome}}</h6>
+      <button class="btn btn-outline-dark" (click)="logout()">SAIR</button>
+    </div>

@@ -1,0 +1,47 @@
+<div class="container row mx-auto">
+    <div *ngIf="lista.length > 0, else semFotos">
+      <div class="carousel-item" *ngFor="let foto of lista; let i = index" [class.active]="i === 0">
+        <div id="carousel{{ foto.id }}" class="carousel  carousel-dark slide" data-bs-ride="carousel">
+
+          <div class="carousel-indicators">
+            <div *ngIf="lista.length > 1">
+              <button *ngFor="let foto of lista; let i = index" type="button" [attr.data-bs-target]="'#carousel' + foto.id"
+                      [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-current]="i === 0 ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)">
+              </button>
+            </div>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item text-center" *ngFor="let foto of lista; let i = index" [class.active]="i === 0">
+              <h2 *ngIf="foto.descricao != '' ">{{ foto.descricao }}</h2>
+              <div class="d-flex justify-content-center">
+                <img class="img-fluid d-md-none" style="width: 10rem;" src="{{ link + foto.foto }}" alt="">
+                <img class="img-fluid d-none d-md-block d-xl-none" style="width: 20rem;" src="{{ link + foto.foto }}" alt="">
+                <img class="img-fluid d-none d-xl-block" style="width: 30rem;" src="{{ link + foto.foto }}" alt="">
+              </div>
+            </div>
+          </div>
+          
+
+          <div *ngIf="lista.length > 1">
+            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carousel' + foto.id" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carousel' + foto.id" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<ng-template #semFotos>
+    <div class="ff-inter centralizar">
+      <p>Não há fotos cadastradas</p>
+    </div>
+  </ng-template>
+  

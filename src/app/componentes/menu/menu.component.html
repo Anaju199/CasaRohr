@@ -1,40 +1,81 @@
-<nav class="navbar navbar-white bg-white navbar-expand-lg" >
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav d-flex justify-content-center w-100">
-        <li class="nav-item ff-inter">
-          <a class="nav-link active" aria-current="page" href="#">Página Inicial</a>
-        </li>
-        <li class="nav-item ff-inter">
-          <a class="nav-link" href="/moveis">Móveis</a>
-        </li>
-        <li class="nav-item ff-inter">
-          <a class="nav-link" href="/supermercado">Supermercado</a>
-        </li>
-        <li class="nav-item ff-inter">
-          <a class="nav-link" href="/construcao">Construção</a>
-        </li>
-        <li class="nav-item ff-inter">
-          <a class="nav-link" href="/magazine">Magazine</a>
-        </li>
-        <li class="nav-item ff-inter">
-          <a class="nav-link" href="/historia">História</a>
-        </li>
-        <li class="nav-item ff-inter">
-          <a class="nav-link" href="/locais">Locais</a>
-        </li>
-      </ul>
-    </div>    
-    <!-- <ng-container *ngIf="user$ | async as Usuario, else login">
-      <h6 class="nav-item ff-inter">Olá {{nome}}</h6>
-      <button class="btn btn-outline-dark" style="color: rgb(0, 0, 0);" (click)="logout()">Sair</button>
-    </ng-container> -->
+<div class="container d-flex align-items-center mx-auto">
+  <!-- Logo -->
+  <div class="logo col-md-2 d-flex align-items-center">
+    <a href="/paginaInicial" class="logo" style="width: 100px;">
+      <img src="../../../assets/imagens/Logo.png" alt="Logo AJDevelopments" class="img-fluid">
+    </a>
   </div>
-</nav>
 
-<ng-template #login class="d-flex">
-  <button class="btn btn-outline-dark" style="color: rgb(0, 0, 0);" routerLink="/login">Login</button>
+  <!-- Menu de Navegação -->
+  <nav class="navbar navbar-expand-lg col-md-10">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      
+      <!-- Botão do Menu Mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Itens do Menu -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav d-flex justify-content-center w-100">
+          <li class="nav-item ff-inter">
+            <a class="nav-link" href="/moveis">Móveis</a>
+          </li>
+          <li class="nav-item ff-inter">
+            <a class="nav-link" href="/supermercado">Supermercado</a>
+          </li>
+          <li class="nav-item ff-inter">
+            <a class="nav-link" href="/construcao">Construção</a>
+          </li>
+          <li class="nav-item ff-inter">
+            <a class="nav-link" href="/magazine">Magazine</a>
+          </li>
+          <li class="nav-item ff-inter">
+            <a class="nav-link" href="/historia">História</a>
+          </li>
+          <li class="nav-item ff-inter">
+            <a class="nav-link" href="/locais">Locais</a>
+          </li>
+          <li class="nav-item ff-inter">
+            <a class="nav-link" href="/catalogos">Catalogos</a>
+          </li>
+          <li class="nav-item ff-inter position-relative">
+            <a class="nav-link" href="#" (click)="toggleSearch($event)">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+            <div class="search-box" [class.active]="isSearchActive">
+              <input type="text" class="form-control" placeholder="Pesquisar..." 
+                     [(ngModel)]="searchText" 
+                     (keyup.enter)="onSearch()"
+                     #searchInput>
+            </div>
+          </li>
+        </ul>
+        <div class="social-icons d-flex align-items-center gap-3">
+          <a href="#" class="nav-link"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="nav-link"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>    
+
+      <!-- Área do Usuário -->
+      <!-- <div class="d-flex align-items-center">
+        <ng-container *ngIf="user$ | async as Usuario;">
+          <h6 class="nav-item ff-inter me-2">Olá, {{nome}}</h6>
+          <button class="btn btn-outline-success" (click)="logout()">SAIR</button>
+        </ng-container>
+
+        <form class="d-flex ms-3">
+          <button class="btn btn-outline-dark" routerLink="/administrador">Administrador</button>
+        </form>
+      </div> -->
+
+    </div>
+  </nav>
+</div>
+
+<!-- Botão de Login -->
+<ng-template #login>
+  <div class="d-flex justify-content-end mt-2">
+    <button class="btn btn-outline-dark" routerLink="/login">Login</button>
+  </div>
 </ng-template>

@@ -1,21 +1,18 @@
+<div style="padding-top: 1rem;">
+  <app-card-carrosel [lista]="listaCabecalho"></app-card-carrosel>
+</div>
 <div class="container row mx-auto">
-    <!-- <div class="col-md-9 align-self-center">
-      <p class="titulo">
-        Móveis
-      </p>
-    </div> -->
-    <div class="col-12 d-flex justify-content-end mb-3">
-        <a href="https://www.instagram.com/casarohrmoveis/" target="_blank" title="Instagram" class="d-flex flex-column align-items-center link">
-            <img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" alt="Instagram" width="20" height="20">
-            <span>&#64;casarohrmoveis</span>
-        </a>
-    </div>
-    <div>
-      <app-card-carrosel [lista]="listaMoveis"></app-card-carrosel>
+    <div class="col-12 text-center mt-4 mb-4">
+      <h2 class="titulo">{{categoria.categoria}}</h2>
     </div>
     <div class="col-12 text-center mt-4 mb-4">
-      <h2 class="titulo">Móveis</h2>
+      <p>{{categoria.texto}}</p>
     </div>
+</div>
+<div>
+  <app-card-carrosel [lista]="listaMoveis"></app-card-carrosel>
+</div>
+<div class="container row mx-auto">
     <div class="row mx-auto">
       <div class="col-md-9 align-self-center">
         <p class="titulo" style="font-size: xx-large; color: #383737;">
@@ -23,88 +20,122 @@
         </p>
       </div>
     </div>
-  
+
     <div class="align-top-center">
       <div class="mural d-flex flex-column align-items-center">
         <div class="d-flex flex-wrap justify-content-center gap-3">
           <div class="text-center">
+            <img src="../../../assets/imagens/temp/rioNovo.jpg" class="ms-2" style="height: 100px; width: 200px">
             <h5 class="texto">Rio Novo do Sul</h5>
-            <a href="https://api.whatsapp.com/send/?phone=5528992541596&amp;text&amp;type=phone_number&amp;app_absent=0" 
-              class="btn btn-success mb-1" 
-              style="height: 40px;" 
-              target="_blank" 
+            <a href="https://api.whatsapp.com/send/?phone=5528992541596&amp;text&amp;type=phone_number&amp;app_absent=0"
+              class="btn btn-success mb-1"
+              style="height: 40px;"
+              target="_blank"
               rel="noopener noreferrer">
               Fale com um representante
             </a>
             <br/>
-            <a href="https://maps.app.goo.gl/yymnVN3zRUzQ3B2y7" class="btn btn-secondary d-flex align-items-center justify-content-center" style="width: 218px;" target="_blank">
-              Como chegar
-              <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
-            </a>            
+            <div class="d-flex flex-wrap justify-content-center gap-1">
+              <a href="https://maps.app.goo.gl/yymnVN3zRUzQ3B2y7" class="btn btn-secondary d-flex align-items-center justify-content-center" style="width: 109px; font-size: 10px;" target="_blank">
+                Como chegar
+                <img src="../../../assets/imagens/maps.png" style="height: 18px; margin: 0; padding: 0; border: none; display: inline; vertical-align: middle;">
+              </a>
+              <a href="#" class="btn d-flex align-items-center justify-content-center" style="width: 109px; background-color: rgb(224, 22, 22); color: white;" target="_blank">
+                Instagram
+                <img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" class="ms-2" style="height: 18px;">
+              </a>
+            </div>
           </div>
           <div class="text-center">
+            <img src="../../../assets/imagens/temp/piuma.jpg" class="ms-2" style="height: 100px; width: 200px">
             <h5 class="texto">Piúma</h5>
-            <a href="https://api.whatsapp.com/send/?phone=5528992541524&amp;text&amp;type=phone_number&amp;app_absent=0" 
-              class="btn btn-success mb-1" 
-              style="height: 40px;" 
-              target="_blank" 
+            <a href="https://api.whatsapp.com/send/?phone=5528992541524&amp;text&amp;type=phone_number&amp;app_absent=0"
+              class="btn btn-success mb-1"
+              style="height: 40px;"
+              target="_blank"
               rel="noopener noreferrer">
               Fale com um representante
             </a>
             <br/>
-            <a href="https://maps.app.goo.gl/yYbykS9zhzReUuwA6" class="btn btn-secondary d-flex align-items-center justify-content-center" style="width: 218px;" target="_blank">
-              Como chegar
-              <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
-            </a>            
+            <div class="d-flex flex-wrap justify-content-center gap-1">
+              <a href="https://maps.app.goo.gl/yYbykS9zhzReUuwA6" class="btn btn-secondary d-flex align-items-center justify-content-center" style="width: 109px; font-size: 10px;" target="_blank">
+                Como chegar
+                <img src="../../../assets/imagens/maps.png" style="height: 18px; margin: 0; padding: 0; border: none; display: inline; vertical-align: middle;">
+              </a>
+              <a href="#" class="btn d-flex align-items-center justify-content-center" style="width: 109px; background-color: rgb(224, 22, 22); color: white;" target="_blank">
+                Instagram
+                <img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" class="ms-2" style="height: 18px;">
+              </a>
+            </div>
           </div>
           <div class="text-center">
+            <img src="../../../assets/imagens/temp/barra.jpg" class="ms-2" style="height: 100px; width: 200px">
             <h5 class="texto">Barra de Marataízes</h5>
-            <a href="https://api.whatsapp.com/send/?phone=5528992549315&amp;text&amp;type=phone_number&amp;app_absent=0" 
-              class="btn btn-success mb-1" 
-              style="height: 40px;" 
-              target="_blank" 
+            <a href="https://api.whatsapp.com/send/?phone=5528992549315&amp;text&amp;type=phone_number&amp;app_absent=0"
+              class="btn btn-success mb-1"
+              style="height: 40px;"
+              target="_blank"
               rel="noopener noreferrer">
               Fale com um representante
             </a>
             <br/>
-            <a href="https://maps.app.goo.gl/xnjvKCQ4Ci2Hnaow5" class="btn btn-secondary d-flex align-items-center justify-content-center" style="width: 218px;" target="_blank">
-              Como chegar
-              <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
-            </a>            
+            <div class="d-flex flex-wrap justify-content-center gap-1">
+              <a href="https://maps.app.goo.gl/xnjvKCQ4Ci2Hnaow5" class="btn btn-secondary d-flex align-items-center justify-content-center" style="width: 109px; font-size: 10px;" target="_blank">
+                Como chegar
+                <img src="../../../assets/imagens/maps.png" style="height: 18px; margin: 0; padding: 0; border: none; display: inline; vertical-align: middle;">
+              </a>
+              <a href="#" class="btn d-flex align-items-center justify-content-center" style="width: 109px; background-color: rgb(224, 22, 22); color: white;" target="_blank">
+                Instagram
+                <img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" class="ms-2" style="height: 18px;">
+              </a>
+            </div>
           </div>
           <div class="text-center">
+            <img src="../../../assets/imagens/temp/vila.jpg" class="ms-2" style="height: 100px; width: 200px">
             <h5 class="texto">Vila de Itapemirim</h5>
-            <a href="https://api.whatsapp.com/send/?phone=5528992777110&amp;text&amp;type=phone_number&amp;app_absent=0" 
-              class="btn btn-success mb-1" 
-              style="height: 40px;" 
-              target="_blank" 
+            <a href="https://api.whatsapp.com/send/?phone=5528992777110&amp;text&amp;type=phone_number&amp;app_absent=0"
+              class="btn btn-success mb-1"
+              style="height: 40px;"
+              target="_blank"
               rel="noopener noreferrer">
               Fale com um representante
             </a>
             <br/>
-            <a href="#" class="btn btn-secondary d-flex align-items-center justify-content-center" 
-              style="width: 218px;" 
-              onclick="alert('Endereço não definido. Entre em contato com o representante.');">
-              Como chegar
-              <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
-            </a>            
+            <div class="d-flex flex-wrap justify-content-center gap-1">
+              <a href="#" class="btn btn-secondary d-flex align-items-center justify-content-center"
+                style="width: 109px; font-size: 10px;" target="_blank">
+                Como chegar
+                <img src="../../../assets/imagens/maps.png" style="height: 18px; margin: 0; padding: 0; border: none; display: inline; vertical-align: middle;">
+              </a>
+              <a href="#" class="btn d-flex align-items-center justify-content-center" style="width: 109px; background-color: rgb(224, 22, 22); color: white;" target="_blank">
+                Instagram
+                <img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" class="ms-2" style="height: 18px;">
+              </a>
+            </div>
           </div>
           <div class="text-center">
+            <img src="../../../assets/imagens/temp/itaipava.jpg" class="ms-2" style="height: 100px; width: 200px">
             <h5 class="texto">Itaoca/Itaipava</h5>
-            <a href="https://api.whatsapp.com/send/?phone=5528999071231&amp;text&amp;type=phone_number&amp;app_absent=0" 
-              class="btn btn-success mb-1" 
-              style="height: 40px;" 
-              target="_blank" 
+            <a href="https://api.whatsapp.com/send/?phone=5528999071231&amp;text&amp;type=phone_number&amp;app_absent=0"
+              class="btn btn-success mb-1"
+              style="height: 40px;"
+              target="_blank"
               rel="noopener noreferrer">
               Fale com um representante
             </a>
             <br/>
-            <a href="https://maps.app.goo.gl/9qjeGni4gJSQChNS6" class="btn btn-secondary d-flex align-items-center justify-content-center" style="width: 218px;" target="_blank">
-              Como chegar
-              <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
-            </a>            
+            <div class="d-flex flex-wrap justify-content-center gap-1">
+              <a href="https://maps.app.goo.gl/9qjeGni4gJSQChNS6" class="btn btn-secondary d-flex align-items-center justify-content-center" style="width: 109px; font-size: 10px;" target="_blank">
+                Como chegar
+                <img src="../../../assets/imagens/maps.png" style="height: 18px; margin: 0; padding: 0; border: none; display: inline; vertical-align: middle;">
+              </a>
+              <a href="#" class="btn d-flex align-items-center justify-content-center" style="width: 109px; background-color: rgb(224, 22, 22); color: white;" target="_blank">
+                Instagram
+                <img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" class="ms-2" style="height: 18px;">
+              </a>
+            </div>
           </div>
         </div>
-      </div>      
+      </div>
     </div>
 </div>

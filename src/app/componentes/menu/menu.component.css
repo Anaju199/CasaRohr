@@ -20,6 +20,15 @@
   border-bottom: 2px solid #00006A; /* Altere a cor e a espessura conforme necessário */
 }
 
+.container.d-flex {
+  flex-wrap: wrap;
+}
+
+.navbar-nav {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .social-icons {
   margin-left: 20px;
 }

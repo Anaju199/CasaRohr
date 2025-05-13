@@ -3,13 +3,13 @@
       <h2>{{ titulo }}</h2>
     </header>
     <form [formGroup]="formulario">
-  
-      <label for="diretoria">Categorias</label>
+
+      <label for="categoria">Categorias</label>
       <div *ngIf="categorias">
         <div>
           <select class="select" id="categoria" aria-label="Selecione a categoria" formControlName="categoria">
             <option disabled selected value="">Escolha uma categoria</option>
-            <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+            <option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.categoria }}</option>
           </select>
         </div>
       </div>
@@ -30,7 +30,7 @@
        *ngIf="formulario.get('descricao')?.errors && formulario.get('descricao')?.touched">
         Descrição é Obrigatório!
       </div>
-  
+
       <label for="foto">Foto</label>
       <input #imageInput
         type="file"
@@ -39,7 +39,7 @@
         accept="image/*"
         (change)="processarArquivo($event.target)"
       >
-  
+
       <div class="d-flex flex-column align-items-center">
         <div class="d-flex flex-wrap gap-3">
         <button
@@ -54,4 +54,3 @@
       </div>
     </form>
   </section>
-  

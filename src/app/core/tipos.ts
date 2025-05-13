@@ -45,7 +45,15 @@ export interface Pedido {
 export interface Foto {
   id: number;
   categoria: string;
+  categoria_nome: string;
   foto: string;
   descricao: string;
+}
+
+
+export interface Categoria {
+  id: number;
+  categoria: string;
+  texto: string;
 }
 

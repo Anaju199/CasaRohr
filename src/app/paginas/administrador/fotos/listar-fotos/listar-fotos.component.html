@@ -36,7 +36,7 @@
         <tbody>
           <ng-container *ngFor="let foto of listaFoto; let i = index">
             <tr [class.odd]="i % 2 === 0" [class.even]="i % 2 !== 0">
-              <td><a class="listaAdm" href="/cadastrarEditarFoto/{{ foto.id }}">{{ foto.categoria }}</a></td>
+              <td><a class="listaAdm" href="/cadastrarEditarFoto/{{ foto.id }}">{{ foto.categoria_nome }}</a></td>
               <td><a class="listaAdm" href="/cadastrarEditarFoto/{{ foto.id }}">{{ foto.descricao }}</a></td>
               <ng-container *ngIf="foto.foto === null; else temFoto">
                 <td><a class="listaAdm" href="/cadastrarEditarFoto/{{ foto.id }}">Não</a></td>
@@ -61,10 +61,9 @@
       </div>
     </div>
   </div>
-  
+
   <ng-template #semFoto>
     <div class="ff-inter centralizar">
       <p>Não há nenhuma foto cadastrado</p>
     </div>
   </ng-template>
-  

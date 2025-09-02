@@ -1,60 +1,48 @@
 <div class="container row mx-auto">
-    <div class="col-md-9 align-self-center">
-      <p class="titulo">
-        Supermercado
-      </p>
-    </div>
-    <div class="col-md-3 align-self-center">
-        <a href="https://www.instagram.com/supermercadoscasarohr/" target="_blank" title="Instagram" class="d-flex flex-column align-items-center link">
-            <img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" alt="Instagram" width="20" height="20">
-            <span>&#64;supermercadocasarohr</span>
-        </a>
-    </div>
+  <div class="col-md-3 align-self-center">
+      <a href="https://www.instagram.com/supermercadoscasarohr/" target="_blank" title="Instagram" class="d-flex flex-column align-items-center link">
+          <img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" alt="Instagram" width="20" height="20">
+          <span>&#64;supermercadocasarohr</span>
+      </a>
+  </div>
+  <div class="col-12 text-center mt-4 mb-4">
+    <h2 class="titulo">{{categoria.categoria}}</h2>
+  </div>
+  <div class="col-12 text-center mt-4 mb-4">
+    <p>{{categoria.texto}}</p>
+  </div>
 </div>
-<!-- <div class="container row mx-auto">
-  <div class="col-md-6 align-self-center">
-    <h3 class="centralizar-texto">FIQUE POR DENTRO DE NOSSAS OFERTAS​ <br/>
-        <img src="../../../assets/imagens/temp/supermercado_01.jpeg" class="img" alt="" style="width: 95%;">
-        <br/>
-    </h3>
-  </div>
-  <div class="col-md-6">
-    <h3 class="centralizar-texto">
-        <br/>
-        <img src="../../../assets/imagens/temp/supermercado_02.jpeg" class="img" alt="" style="width: 95%;">
-        <br/>
-    </h3>
-  </div>
-</div> -->
 <div>
   <app-card-carrosel [lista]="listaSupermercado"></app-card-carrosel>
 </div>
-<div class="centralizar-texto">
-  <button type="button" class="btn btn-success mb-1 text-center w-100"
-    style="height: auto; white-space: normal; text-wrap: wrap;">
-    Clique aqui para entrar em nossa lista de transmissão
-  </button>
-</div>
-<div class="mural d-flex flex-column align-items-center">
-  <div class="d-flex flex-wrap justify-content-center gap-3">
-    <div class="text-center">
-      <h5 class="texto">Supermercado Casa Rohr - Loja 1</h5>
-      <br/>
-      <a href="https://maps.app.goo.gl/yymnVN3zRUzQ3B2y7" class="btn btn-secondary d-flex align-items-center justify-content-center" 
-        style="width: 218px;" target="_blank">
-        Como chegar
-        <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
-      </a>
-    </div>
-    |
-    <div class="text-center">
-      <h5 class="texto">Supermercado Cas Rohr - Loja 2</h5>
-      <br/>
-      <a href="https://maps.app.goo.gl/Ati4sMA4RN9XYqzC6" class="btn btn-secondary d-flex align-items-center justify-content-center" 
-        style="width: 218px;" target="_blank">
-        Como chegar
-        <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
-      </a>
+<div class="container row mx-auto">
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-success mb-1 text-center w-100"
+      style="max-width: 500px; height: auto; white-space: normal; text-wrap: wrap;">
+      Clique aqui para entrar em nossa lista de transmissão
+    </button>
+  </div>
+  <div class="mural d-flex flex-column align-items-center">
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <div class="text-center">
+        <h5 class="texto">Supermercado Casa Rohr - Loja 1</h5>
+        <br/>
+        <a href="https://maps.app.goo.gl/yymnVN3zRUzQ3B2y7" class="btn btn-secondary d-flex align-items-center justify-content-center"
+          style="width: 218px;" target="_blank">
+          Como chegar
+          <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
+        </a>
+      </div>
+      |
+      <div class="text-center">
+        <h5 class="texto">Supermercado Cas Rohr - Loja 2</h5>
+        <br/>
+        <a href="https://maps.app.goo.gl/Ati4sMA4RN9XYqzC6" class="btn btn-secondary d-flex align-items-center justify-content-center"
+          style="width: 218px;" target="_blank">
+          Como chegar
+          <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
+        </a>
+      </div>
     </div>
   </div>
 </div>

@@ -1,42 +1,24 @@
 <div class="container row mx-auto">
-    <div class="col-md-9 align-self-center">
-      <p class="titulo">
-        Magazine
-      </p>
-    </div>
-    <!-- <div class="col-md-3 align-self-center">
-        <a href="https://www.instagram.com/casarohr_mat.deconstrucao/" target="_blank" title="Instagram" class="d-flex flex-column align-items-center link">
-            <img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" alt="Instagram" width="20" height="20">
-            <span>&#64;casarohr_mat.deconstrucao</span>
-        </a>
-    </div> -->
-</div>
-<div class="container row mx-auto">
-  <!-- <div class="col-md-7 align-self-center">
-    <h3 class="centralizar-texto">FIQUE POR DENTRO DE NOSSAS OFERTAS​ <br/>
-        <img src="../../../assets/imagens/temp/construcao_01.png" class="img" alt="" style="width: 90%;">
-        <br/>
-        <br/>
-        <img src="../../../assets/imagens/temp/construcao_03.png" class="img" alt="" style="width: 90%;">
-    </h3>
-  </div> -->
-  <div>
-    <app-card-carrosel [lista]="listaMagazine"></app-card-carrosel>
+  <div class="col-12 text-center mt-4 mb-4">
+    <h2 class="titulo">{{categoria.categoria}}</h2>
   </div>
+  <div class="col-12 text-center mt-4 mb-4">
+    <p>{{categoria.texto}}</p>
+  </div>
+</div>
+<div>
+  <app-card-carrosel [lista]="listaMagazine"></app-card-carrosel>
+</div>
+<div>
   <div class="col-md-12">
-    <!-- <h3 class="centralizar-texto"> FIQUE POR DENTRO DE NOSSAS OFERTAS​
-        <br/>
-        <img src="../../../assets/imagens/temp/magazine_01.png" class="img" alt="" style="width: 100%;">
-        <br/>
-    </h3> -->
     <br/>
     <div class="mural d-flex flex-column align-items-center">
       <div class="d-flex flex-wrap justify-content-center gap-3">
         <div>
-          <a href="https://api.whatsapp.com/send/?phone=5528992988679&amp;text&amp;type=phone_number&amp;app_absent=0" 
-              class="btn btn-success mb-1" 
-              style="height: 40px;" 
-              target="_blank" 
+          <a href="https://api.whatsapp.com/send/?phone=5528992988679&amp;text&amp;type=phone_number&amp;app_absent=0"
+              class="btn btn-success mb-1"
+              style="height: 40px;"
+              target="_blank"
               rel="noopener noreferrer">
               Fale com um representante
             </a>
@@ -45,7 +27,7 @@
           <a href="https://maps.app.goo.gl/M9bJi2okGKKeLQDNA" class="btn btn-secondary d-flex align-items-center justify-content-center" style="width: 218px;" target="_blank">
             Como chegar
             <img src="../../../assets/imagens/maps.png" class="ms-2" style="height: 20px;">
-          </a>   
+          </a>
         </div>
       </div>
     </div>

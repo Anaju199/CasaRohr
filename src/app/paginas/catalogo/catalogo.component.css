@@ -1,5 +1,96 @@
-.container-iframe {
+/* .container-iframe {
   width: 100%;
-  max-width: 100vw; /* Garante que não ultrapasse a tela */
+  max-width: 100vw;
   overflow: hidden;
+} */
+
+.catalog-section {
+  position: relative; /* Fundamental para a imagem seguir o layout */
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  overflow: hidden; /* Esconde qualquer excesso de imagem */
+}
+
+.catalog-text {
+  width: 50vw;
+  background-color: #173d77;
+  color: white;
+  padding: 4rem;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.catalog-animate-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.catalog-image {
+  position: absolute;
+  left: 60vw;
+  top: 50%;
+  transform: translateY(-50%) translateX(100%);
+  z-index: 2;
+  width: 40vw;
+  max-width: 500px;
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.catalog-animate-image {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+}
+
+.catalog-image img {
+  width: 700px;
+  height: auto;
+}
+
+
+/* Tipografia e botão */
+.small-title {
+  color: #f6921e;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.big-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.dots {
+  color: #f6921e;
+  letter-spacing: 0.3rem;
+  font-size: 1.5rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.download-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.9rem 2.2rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  transform: scale(1.03);
+  filter: brightness(1.1);
 }

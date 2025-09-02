@@ -10,7 +10,6 @@ import { Foto } from '../tipos';
 export class FotosService {
   private readonly API = environment.apiUrl + 'fotos'
   private readonly API_LISTA = environment.apiUrl + 'lista_fotos/'
-  private readonly API_LISTA_SOCIEDADES = environment.apiUrl + 'lista_categorias/'
 
   constructor(private http: HttpClient) { }
 
@@ -28,10 +27,6 @@ export class FotosService {
 
     const url = `${this.API}/`
     return this.http.get<any>(url, {params})
-  }
-
-  listarCategorias(): Observable<string[]> {
-    return this.http.get<string[]>(this.API_LISTA_SOCIEDADES)
   }
 
   criar(foto: FormData): Observable<Foto> {

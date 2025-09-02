@@ -26,6 +26,8 @@ import { CatalogoComponent } from './paginas/catalogo/catalogo.component';
 import { CadastrarEditarCatalogosComponent } from './paginas/administrador/catalogo/cadastrar-editar-catalogos/cadastrar-editar-catalogos.component';
 import { ListarCatalogosComponent } from './paginas/administrador/catalogo/listar-catalogos/listar-catalogos.component';
 import { SearchResultsComponent } from './paginas/search-results/search-results.component';
+import { CadastrarEditarCategoriaComponent } from './paginas/administrador/categorias/cadastrar-editar-categoria/cadastrar-editar-categoria.component';
+import { ListarCategoriaComponent } from './paginas/administrador/categorias/listar-categoria/listar-categoria.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { SearchResultsComponent } from './paginas/search-results/search-results.
     CatalogoComponent,
     CadastrarEditarCatalogosComponent,
     ListarCatalogosComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    CadastrarEditarCategoriaComponent,
+    ListarCategoriaComponent
   ],
   imports: [
     BrowserModule,

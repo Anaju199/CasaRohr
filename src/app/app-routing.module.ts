@@ -18,6 +18,8 @@ import { CatalogoComponent } from './paginas/catalogo/catalogo.component';
 import { CadastrarEditarCatalogosComponent } from './paginas/administrador/catalogo/cadastrar-editar-catalogos/cadastrar-editar-catalogos.component';
 import { ListarCatalogosComponent } from './paginas/administrador/catalogo/listar-catalogos/listar-catalogos.component';
 import { SearchResultsComponent } from './paginas/search-results/search-results.component';
+import { CadastrarEditarCategoriaComponent } from './paginas/administrador/categorias/cadastrar-editar-categoria/cadastrar-editar-categoria.component';
+import { ListarCategoriaComponent } from './paginas/administrador/categorias/listar-categoria/listar-categoria.component';
 
 const routes: Routes = [
   {
@@ -87,6 +89,21 @@ const routes: Routes = [
   {
     path: 'listarFotos',
     component: ListarFotosComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'cadastrarEditarCategoria/:id',
+    component: CadastrarEditarCategoriaComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'cadastrarEditarCategoria',
+    component: CadastrarEditarCategoriaComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'listarCategorias',
+    component: ListarCategoriaComponent,
     canActivate: [AuthGuard]
   },
   {

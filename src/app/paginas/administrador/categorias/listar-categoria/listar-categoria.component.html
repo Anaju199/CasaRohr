@@ -1,0 +1,62 @@
+<div class="container row mx-auto">
+  <div class="container row mx-auto">
+    <div class="col-md-9 align-self-center">
+      <p class="titulo">
+        Categorias
+      </p>
+    </div>
+  </div>
+  <div class="align-self-center">
+    <div class="d-flex" role="search">
+      <input
+        type="search"
+        class="form-control me-2"
+        placeholder="Qual categoria você procura?"
+        autofocus
+        [(ngModel)]="filtroCategoria"
+        (keyup)="pesquisarCategoria()"
+      >
+    </div>
+  </div>
+  <br>
+  <br>
+  <div *ngIf="listaCategoria.length > 0, else semCategoria">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Texto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let categoria of listaCategoria; let i = index">
+          <tr [class.odd]="i % 2 === 0" [class.even]="i % 2 !== 0">
+            <td><a class="listaAdm" href="/cadastrarEditarCategoria/{{ categoria.id }}">{{ categoria.categoria }}</a></td>
+            <ng-container *ngIf="categoria.texto === ''; else temCategoria">
+              <td><a class="listaAdm" href="/cadastrarEditarCategoria/{{ categoria.id }}">Não</a></td>
+            </ng-container>
+            <ng-template #temCategoria>
+              <td><a class="listaAdm" href="/cadastrarEditarCategoria/{{ categoria.id }}">Sim</a></td>
+            </ng-template>
+           </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <div class="d-flex flex-column align-items-center">
+    <div class="d-flex flex-wrap gap-3" *ngIf="totalPaginas > 1">
+      <button (click)="paginaAnterior()" [ngClass]="habilitarBotao('anterior')" [disabled]="habilitarBotao('anterior') === 'botao_pag_desabilitado'">Anterior</button>
+      <button (click)="proximaPagina()" [ngClass]="habilitarBotao('proxima')" [disabled]="habilitarBotao('proxima') === 'botao_pag_desabilitado'">Próxima</button>
+    </div>
+    <br/>
+    <div class="d-flex flex-wrap gap-3">
+      <button (click)="voltar()" class="botao">Voltar para página do administrador</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #semCategoria>
+  <div class="ff-inter centralizar">
+    <p>Não há nenhuma categoria cadastrado</p>
+  </div>
+</ng-template>

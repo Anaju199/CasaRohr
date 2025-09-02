@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CategoriasService } from 'src/app/core/services/categorias.service';
+import { Categoria } from 'src/app/core/tipos';
 import { FotosService } from 'src/app/core/services/fotos.service';
 
 @Component({
@@ -12,19 +14,20 @@ export class CadastrarEditarFotosComponent implements OnInit {
 
   id?: number
   formulario!: FormGroup;
-  categorias: string[] = [];
+  categorias: Categoria[] = [];
   ano: number = new Date().getFullYear()
   titulo: string = 'Adicione um novo Foto:'
 
   constructor(
     private service: FotosService,
+    private categoriaService: CategoriasService,
     private router: Router,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.service.listarCategorias().subscribe(
+    this.categoriaService.listar('').subscribe(
       categorias => {
         this.categorias = categorias;
       },

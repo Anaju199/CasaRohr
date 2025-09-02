@@ -5,9 +5,9 @@
           Catalogo
         </p>
       </div>
-      <div class="col-md-2 align-self-center">
+      <!-- <div class="col-md-2 align-self-center">
         <i class="fa-regular fa-plus"></i><a href="/cadastrarEditarCatalogo" class="add"> Adicionar Catalogo</a>
-      </div>
+      </div> -->
     </div>
     <div class="align-self-center">
       <div class="d-flex" role="search">
@@ -34,7 +34,7 @@
           <ng-container *ngFor="let catalogo of listaCatalogo; let i = index">
             <tr [class.odd]="i % 2 === 0" [class.even]="i % 2 !== 0">
               <td><a class="listaAdm" href="/cadastrarEditarCatalogo/{{ catalogo.id }}">{{ catalogo.descricao }}</a></td>
-              <td><button class="botaoExcluir" (click)="excluir(catalogo.id)"><i class="fa-regular fa-trash-can"></i></button></td>
+              <!-- <td><button class="botaoExcluir" (click)="excluir(catalogo.id)"><i class="fa-regular fa-trash-can"></i></button></td> -->
             </tr>
           </ng-container>
         </tbody>
@@ -51,10 +51,9 @@
       </div>
     </div>
   </div>
-  
+
   <ng-template #semCatalogo>
     <div class="ff-inter centralizar">
       <p>Não há nenhuma informação de catalogocadastrado</p>
     </div>
   </ng-template>
-  

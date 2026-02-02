@@ -1,0 +1,47 @@
+<section class="fc-wrapper">
+<div class="fc-card">
+<header class="fc-header">
+<h1>Fale Conosco</h1>
+<p class="subtitle">Entre em contato com a nossa equipe, será um prazer atender você.</p>
+</header>
+
+
+<form [formGroup]="form" (ngSubmit)="enviar()" novalidate class="fc-form">
+<label>
+<span>Nome *</span>
+<input type="text" formControlName="nome" placeholder="Seu nome completo" />
+<small class="error" *ngIf="nome?.touched && nome?.invalid">Informe um nome válido.</small>
+</label>
+
+
+<label>
+<span>E‑mail *</span>
+<input type="email" formControlName="email" placeholder="exemplo@dominio.com" />
+<small class="error" *ngIf="email?.touched && email?.invalid">Informe um e‑mail válido.</small>
+</label>
+
+
+<label>
+<span>Mensagem *</span>
+<textarea formControlName="mensagem" rows="4" placeholder="Escreva sua mensagem..."></textarea>
+<small class="error" *ngIf="mensagem?.touched && mensagem?.invalid">Escreva uma mensagem.</small>
+</label>
+
+
+<div class="actions">
+<button type="submit" [disabled]="loading">{{ loading ? 'Enviando...' : 'Enviar' }}</button>
+</div>
+
+
+<div class="success" *ngIf="enviado">
+<strong>Obrigado!</strong> Sua mensagem foi enviada.
+</div>
+</form>
+
+
+<footer class="fc-footer">
+<p>Encaminhe seu email para: <a [href]="'mailto:' + contatoEmail">{{ contatoEmail }}</a></p>
+<p>Ou fale com a gente no <a href="javascript:void(0)" (click)="abrirWhatsApp()">WhatsApp</a></p>
+</footer>
+</div>
+</section>

@@ -1,7 +1,9 @@
-import { AfterViewInit, Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ElementRef, ViewChild, Renderer2, Inject } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CatalogoService } from 'src/app/core/services/catalogo.service';
 import { environment } from 'src/environments/environment';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-catalogo',
@@ -9,6 +11,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./catalogo.component.css']
 })
 export class CatalogoComponent implements OnInit, AfterViewInit {
+  @ViewChild('catalogSection') catalogSection!: ElementRef;
   @ViewChild('catalogText') catalogText!: ElementRef;
   @ViewChild('catalogImage') catalogImage!: ElementRef;
 
@@ -19,13 +22,20 @@ export class CatalogoComponent implements OnInit, AfterViewInit {
   constructor(
     private service: CatalogoService,
     private renderer: Renderer2,
-    public sanitizer: DomSanitizer
+    public sanitizer: DomSanitizer,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
   ngOnInit(): void {
     this.service.listar().subscribe((lista) => {
       this.lista = lista
     })
+  }
+
+  baixarPrimeiroArquivo() {
+    if (this.lista?.length) {
+      this.baixarArquivo(this.lista[0].arquivo);
+    } 
   }
 
   baixarArquivo(nomeArquivo: string) {
@@ -50,20 +60,24 @@ export class CatalogoComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const observer = new IntersectionObserver(
+    const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            this.renderer.addClass(this.catalogText.nativeElement, 'catalog-animate-text');
-            this.renderer.addClass(this.catalogImage.nativeElement, 'catalog-animate-image');
-            observer.disconnect(); // Remove o observer depois da primeira animação
-          }
-        });
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          // adiciona as classes de animação
+          this.renderer.addClass(this.catalogText.nativeElement, 'catalog-animate-text');
+          this.renderer.addClass(this.catalogImage.nativeElement, 'catalog-animate-image');
+          io.disconnect(); // roda só uma vez
+        }
       },
-      { threshold: 0.3 } // aciona quando 30% estiver visível
+      {
+        threshold: 0.15,           // 15% visível já dispara
+        root: null,                // viewport
+        rootMargin: '0px 0px -20% 0px', // dispara um pouco antes do fim
+      }
     );
 
-    observer.observe(this.catalogText.nativeElement);
+    io.observe(this.catalogSection.nativeElement);
   }
 
 }

@@ -57,3 +57,10 @@ export interface Categoria {
   texto: string;
 }
 
+
+export interface Email {
+  id: number;
+  categoria: string;
+  texto: string;
+}
+

@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
   apiUrl: 'https://anajulia.pythonanywhere.com/ch_',
+  apiUrlToken: 'https://anajulia.pythonanywhere.com/',
   linkSite: 'http://ajdevelopments.com.br',
   urlImagem: 'https://anajulia.pythonanywhere.com',
   login: 'logincasarohr'

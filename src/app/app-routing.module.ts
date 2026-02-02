@@ -20,6 +20,8 @@ import { ListarCatalogosComponent } from './paginas/administrador/catalogo/lista
 import { SearchResultsComponent } from './paginas/search-results/search-results.component';
 import { CadastrarEditarCategoriaComponent } from './paginas/administrador/categorias/cadastrar-editar-categoria/cadastrar-editar-categoria.component';
 import { ListarCategoriaComponent } from './paginas/administrador/categorias/listar-categoria/listar-categoria.component';
+import { TrabalheConoscoComponent } from './paginas/trabalhe-conosco/trabalhe-conosco.component';
+import { FaleConoscoComponent } from './paginas/fale-conosco/fale-conosco.component';
 
 const routes: Routes = [
   {
@@ -66,6 +68,14 @@ const routes: Routes = [
   {
     path: 'instagram',
     component: InstagramComponent
+  },
+  {
+    path: 'trabalheConosco',
+    component: TrabalheConoscoComponent
+  },
+  {
+    path: 'faleConosco',
+    component: FaleConoscoComponent
   },
   {
     path: 'login',

@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  // apiUrl: 'http://127.0.0.1:8000/ch_',
+  // apiUrl: 'http://localhost:8000/ch_',
+  // apiUrlToken: 'http://127.0.0.1:8000/',
   apiUrl: 'https://anajulia.pythonanywhere.com/ch_',
+  apiUrlToken: 'https://anajulia.pythonanywhere.com/',
   linkSite: 'http://localhost:4200',
   urlImagem: 'https://anajulia.pythonanywhere.com',
   login: 'logincasarohr'

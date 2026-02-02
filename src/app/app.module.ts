@@ -28,6 +28,8 @@ import { ListarCatalogosComponent } from './paginas/administrador/catalogo/lista
 import { SearchResultsComponent } from './paginas/search-results/search-results.component';
 import { CadastrarEditarCategoriaComponent } from './paginas/administrador/categorias/cadastrar-editar-categoria/cadastrar-editar-categoria.component';
 import { ListarCategoriaComponent } from './paginas/administrador/categorias/listar-categoria/listar-categoria.component';
+import { TrabalheConoscoComponent } from './paginas/trabalhe-conosco/trabalhe-conosco.component';
+import { FaleConoscoComponent } from './paginas/fale-conosco/fale-conosco.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { ListarCategoriaComponent } from './paginas/administrador/categorias/lis
     ListarCatalogosComponent,
     SearchResultsComponent,
     CadastrarEditarCategoriaComponent,
-    ListarCategoriaComponent
+    ListarCategoriaComponent,
+    TrabalheConoscoComponent,
+    FaleConoscoComponent
   ],
   imports: [
     BrowserModule,

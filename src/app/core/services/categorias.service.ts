@@ -8,7 +8,7 @@ import { Categoria } from '../tipos';
   providedIn: 'root'
 })
 export class CategoriasService {
- private readonly API = environment.apiUrl + 'categorias'
+  private readonly API = environment.apiUrl + 'categorias'
   private readonly API_LISTA = environment.apiUrl + 'lista_categorias/'
 
   constructor(private http: HttpClient) { }

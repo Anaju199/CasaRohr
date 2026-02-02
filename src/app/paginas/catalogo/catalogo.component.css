@@ -4,23 +4,26 @@
   overflow: hidden;
 } */
 
+
 .catalog-section {
-  position: relative; /* Fundamental para a imagem seguir o layout */
   display: flex;
   align-items: center;
-  padding-top: 2rem;
-  overflow: hidden; /* Esconde qualquer excesso de imagem */
+  justify-content: space-between;
+  padding: 2rem 0rem;
+  overflow: hidden;
+  flex-wrap: wrap; /* permite quebrar em telas pequenas */
 }
 
 .catalog-text {
-  width: 50vw;
+  width: 55%;
+  min-width: 300px; /* reduzido para caber em telas menores */
   background-color: #173d77;
   color: white;
-  padding: 4rem;
+  padding: 4rem 2rem; /* reduzido para celular */
   border-top-right-radius: 80px;
   border-bottom-right-radius: 80px;
   opacity: 0;
-  transform: translateX(-100%);
+  transform: translateX(-90%);
   transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
@@ -30,37 +33,35 @@
 }
 
 .catalog-image {
-  position: absolute;
-  left: 60vw;
-  top: 50%;
-  transform: translateY(-50%) translateX(100%);
-  z-index: 2;
-  width: 40vw;
-  max-width: 500px;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   opacity: 0;
+  transform: translateX(100%);
   transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
 .catalog-animate-image {
-  transform: translateY(-50%) translateX(0);
+  transform: translateX(-33%); /* deixa visível */
   opacity: 1;
 }
 
 .catalog-image img {
-  width: 700px;
+  width: 100%;
+  width: 950px; /* limite máximo */
   height: auto;
 }
-
 
 /* Tipografia e botão */
 .small-title {
   color: #f6921e;
-  font-size: 1.2rem;
+  font-size: 3.2rem;
   margin-bottom: 0.5rem;
 }
 
 .big-title {
-  font-size: 2.8rem;
+  font-size: 4.2rem; /* reduzido para celular */
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
@@ -68,21 +69,21 @@
 .dots {
   color: #f6921e;
   letter-spacing: 0.3rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* ajustado */
   margin: 0.5rem 0 1.5rem;
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 2rem; /* ajustado */
   margin-bottom: 2rem;
-  max-width: 480px;
+  max-width: 60%; /* ocupa toda largura disponível */
 }
 
 .download-btn {
   background-color: transparent;
   border: 2px solid white;
   color: white;
-  padding: 0.9rem 2.2rem;
+  padding: 0.8rem 2rem;
   font-size: 1rem;
   border-radius: 50px;
   cursor: pointer;
@@ -93,4 +94,49 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
   transform: scale(1.03);
   filter: brightness(1.1);
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 768px) {
+  .catalog-text,
+  .catalog-image {
+    width: 100%; /* ocupa a linha toda */
+    min-width: auto;
+    border-radius: 0;
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .catalog-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  
+  .catalog-animate-image {
+    transform: translateX(0); /* deixa visível */
+    opacity: 1;
+  }
+
+  .big-title {
+    font-size: 2rem;
+  }
+
+  .small-title {
+    font-size: 1rem;
+  }
+
+  .dots {
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .download-btn {
+    width: 80%;
+    padding: 0.8rem 0;
+  }
 }

@@ -1,0 +1,62 @@
+<section class="tc-wrapper">
+
+<div class="tc-card">
+<header class="tc-header">
+<h1>Trabalhe Conosco</h1>
+<p class="subtitle">Gostou das nossas vagas? Conta um pouco sobre você — queremos conhecer seu trabalho.</p>
+</header>
+
+<form [formGroup]="form" (ngSubmit)="enviar()" novalidate class="tc-form">
+<div class="row">
+<label>
+<span>Nome *</span>
+<input type="text" formControlName="nome" placeholder="Seu nome completo" />
+<small class="error" *ngIf="nome?.touched && nome?.invalid">Informe um nome válido (mín. 2 caracteres).</small>
+</label>
+
+
+<label>
+<span>E‑mail *</span>
+<input type="email" formControlName="email" placeholder="exemplo@dominio.com" />
+<small class="error" *ngIf="email?.touched && email?.invalid">Informe um e‑mail válido.</small>
+</label>
+</div>
+
+
+<label class="single">
+<span>Cargo de interesse</span>
+<input type="text" formControlName="cargoInteressado" placeholder="Informe qual é o cargo de sua preferência" />
+</label>
+
+
+<label class="single">
+<span>Mensagem (opcional)</span>
+<textarea formControlName="mensagem" rows="4" placeholder="Escreva algo sobre sua experiência..."></textarea>
+</label>
+
+<!-- 
+<label class="file">
+<span>Anexar CV (opcional)</span>
+<div class="file-row">
+<input id="file" type="file" (change)="onFileChange($event)" accept=".pdf,.doc,.docx" />
+<div class="file-name">{{ uploadFileName || 'Nenhum arquivo selecionado' }}</div>
+</div>
+</label> -->
+
+
+<div class="actions">
+<button type="submit" [disabled]="loading">{{ loading ? 'Enviando...' : 'Enviar' }}</button>
+</div>
+
+
+<div class="success" *ngIf="enviado">
+<strong>Obrigado!</strong> Seu cadastro foi enviado. Em breve entraremos em contato.
+</div>
+</form>
+
+
+<footer class="tc-footer">
+<p>Encaminhe seu email pra: <a [href]="'mailto:' + recrutamentoEmail">{{ recrutamentoEmail }}</a></p>
+</footer>
+</div>
+</section>

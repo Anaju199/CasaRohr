@@ -22,7 +22,7 @@ export class AutenticacaoInterceptor implements HttpInterceptor {
   private login: string = environment.login;
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const isApiRequest = request.url.includes('/api/');
+    const isEmailRequest = request.url.includes('email');
     const isLoginRequest = request.url.includes(`${this.login}/`);
 
     
@@ -42,7 +42,7 @@ export class AutenticacaoInterceptor implements HttpInterceptor {
       return next.handle(clonedRequest);
     }
 
-    // if (isApiRequest) {
+    // if (isEmailRequest) {
     //   return from(this.csfrTokenService.getCSRFToken()).pipe(
     //     switchMap(() => {
     //       const csrfToken = this.csfrTokenService.getCSRFTokenFromCookies();

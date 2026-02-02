@@ -46,7 +46,7 @@
     <p>Não há catalogos cadastradas</p>
   </div>
 </ng-template> -->
-<div class="catalog-section">
+<div class="catalog-section" #catalogSection>
   <div class="catalog-text" #catalogText>
     <p class="small-title">Catálogo</p>
     <p class="big-title">Linha {{ano}}</p>
@@ -56,9 +56,9 @@
     <p class="description">
       Confira a coleção completa no nosso catálogo de 2025.
     </p>
-    <div *ngFor="let download of lista" class="download-item">
-      <button class="download-btn" (click)="baixarArquivo(download.arquivo)">Download do Catálogo</button>
-    </div>
+    <button class="download-btn" (click)="baixarPrimeiroArquivo()" [disabled]="!lista.length">
+      Download do Catálogo
+    </button>
   </div>
 
   <div class="catalog-image" #catalogImage>
